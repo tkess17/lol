@@ -25,6 +25,12 @@ repositories {
 
 
 dependencies {
+	compile 'org.webjars:bootstrap:3.3.4'
+	compile 'org.webjars:jquery:2.1.4'
+	compile("org.projectlombok:lombok:1.16.8")
+	compile 'com.squareup.okhttp3:okhttp:3.8.1'
+	compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	compile 'org.thymeleaf.extras:thymeleaf-extras-springsecurity4:2.1.2.RELEASE'
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
