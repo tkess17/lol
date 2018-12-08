@@ -21,21 +21,41 @@
 </head>
 <body>
 
-<div th:fragment="nav" class="fixed">
-    <nav class="main-header">
-        <div class="container clearfix">
-            <h1 class="brand-logo"><a th:href="@{/}">RiotPlz <span>-</span> League of Legends</a></h1>
-            <ul class="navbar">
-                <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/}">Summoners</a></li>
-                <li th:classappend="${#httpServletRequest.servletPath.equals('/leaderboard') ? 'active' : ''}"><a th:href="@{/leaderboard}">Leaderboard</a></li>
-                <li th:classappend="${#httpServletRequest.servletPath.equals('/patchnotes') ? 'active' : ''}"><a th:href="@{/patchnotes}">Patch Notes</a></li>
-                <li th:classappend="${#httpServletRequest.servletPath.equals('/about') ? 'active' : ''}"><a th:href="@{/about}">About</a></li>
-            </ul>
-        </div>
-    </nav>
-</div>
+<div class="navbar navbar-inverse">
+		<div class="container">
+		
+			<div class="navbar-header">
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand">Riot Plz</a>
+			</div>
+			
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#home">Home</a></li>
+					<li><a href="statistics/champions">Statistics</a></li>
+					<li><a href="http://na.leagueoflegends.com/en/news/game-updates/patch/patch-824-notes" target="_blank">Patch Notes</a></li>
+				</ul>
+				<form class="navbar-form navbar-right">
+					<div class="form-group">
+						<input type="email" placeholder="Email" class="form-control" />
+					</div>
+					<div class="form-group">
+						<input type="password" placeholder="Password" class="form-control" />
+					</div>
+					<button type="submit" class="btn btn-success">Log In</button>
+					<button type="submit" class="btn btn-success">Register</button>
+				</form>
+				
+			</div>
+		</div>
+	</div>
 
-<div th:fragment="searchbar" class="container contentContainer">
+
+<div th:fragment="searchbar" class="container contentContainer" id="home">
     <div class="row">
     	<p class="center"><img src="images/teemo.jpg" class="teemoImage"/>
         <div class="col-md-6 col-md-offset-3 center">
