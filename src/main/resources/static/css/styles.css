@@ -1,0 +1,21 @@
+#home {
+	background-size:cover;
+	margin:auto;
+	background-color:#C7C7C7;
+	width:100%;
+}	
+	
+.teemoImage {
+	padding-top:10px;
+	display: block;
+	margin: auto;
+	height:500px;
+}
+
+.alert {
+	display:none;
+}
+
+#searchButton {
+	margin-bottom:20px;
+}

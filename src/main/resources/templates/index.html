@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head lang="en">
+<head lang="en">      
 
+	<title>Riot Plz</title>
 
-    <title>RiotPlz</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width", initial=scale=1 />
 
-    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
-          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
-          rel="stylesheet" media="screen" />
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
-            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
-
-    <link href="../static/css/guru.css"
-          th:href="@{css/guru.css}" rel="stylesheet" media="screen"/>
-          
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link rel="stylesheet" th:href="@{/css/styles.css}" />
+    
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" th:href="@{/vendor/normalize.css}" />
     <link rel="stylesheet" th:href="@{/app.css}" />
@@ -36,18 +35,31 @@
     </nav>
 </div>
 
-<div th:fragment="searchbar" class="search-bar container">
+<div th:fragment="searchbar" class="container contentContainer">
     <div class="row">
-        <div class="col s12">
+    	<p class="center"><img src="images/teemo.jpg" class="teemoImage"/>
+        <div class="col-md-6 col-md-offset-3 center">
             <form th:action="@{/summoner/search}" method="get">
-                <div class="input-field">
-                    <input name="summonerName" type="search" placeholder="Search Summoner..." required="required" autocomplete="off"/>
-                    <i class="material-icons">search</i>
-                </div>
+                <div class="input-group">
+					<input type="text" class="form-control" name="summonerName" id="summoner" placeholder="Summoner Name">
+						<span class="input-group-btn">
+							<button class="btn btn-default glyphicon glyphicon-search" id="searchButton"></button>
+						</span>
+				</div>
             </form>
         </div>
     </div>
 </div>
+
+<script src="//code.jquery.com/jquery-3.1.1.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+	$(".contentContainer").css("min-height", $(window).height());
+	
+</script>
 
 </body>
 </html>
